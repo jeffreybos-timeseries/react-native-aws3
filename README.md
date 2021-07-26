@@ -1,6 +1,8 @@
+
+
 # React Native AWS3
 
-React Native AWS3 is a module for uploading files to S3. Unlike other libraries out there, there are no native dependencies.
+React Native Upload AWS S3 is a module for uploading files to S3. The base module is benjreinhart's React Native AWS3(https://github.com/benjreinhart/react-native-aws3). The reason I made it new based on his module is that his module has not been uploaded for a long time and causes an SSL error.
 
 ```
 npm install --save react-native-aws3
@@ -55,7 +57,8 @@ const options = {
   region: "us-east-1",
   accessKey: "your-access-key",
   secretKey: "your-secret-key",
-  successActionStatus: 201
+  successActionStatus: 201,
+  method:"PUT/POST" // default is POST
 }
 
 RNS3.put(file, options).then(response => {
